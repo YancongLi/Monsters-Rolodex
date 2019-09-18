@@ -7,7 +7,8 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: []
+      monsters: [],
+      searchField: ''
     };
   }
 
@@ -18,9 +19,17 @@ class App extends Component {
   }
 
   render() {
+    //https://stackoverflow.com/questions/24718709/reactjs-does-render-get-called-any-time-setstate-is-called
+    const { monsters, searchField } = this.state;
+    const filterMonsters = monsters.filter(monster => {
+      return monster.name.toLowerCase().includes(searchField.toLowerCase())
+    });
+
     return (
       <div className="App">
-        <CardList monsters={this.state.monsters}>
+        <input type='' placeholder='search monsters here!'
+          onChange={e => this.setState({ searchField: e.target.value })} />
+        <CardList monsters={filterMonsters}>
         </CardList>
       </div>
     );
