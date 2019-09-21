@@ -1,3 +1,8 @@
+## Project URL: https://yancongli.github.io/Monsters-Rolodex/
+Screenshot:
+![alt text](./preview.png "project preview picture")
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
