@@ -19,6 +19,10 @@ class App extends Component {
       .then(userJson => { this.setState({ monsters: userJson }) })
   }
 
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value });
+  }
+
   render() {
     //https://stackoverflow.com/questions/24718709/reactjs-does-render-get-called-any-time-setstate-is-called
     const { monsters, searchField } = this.state;
@@ -28,9 +32,10 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1> Monster Rolodex </h1>
         <SearchBox
           placeholder={"search monsters here!"}
-          handleChange={e => this.setState({ searchField: e.target.value })}>
+          handleChange={this.handleChange}>
         </SearchBox>
 
         <CardList monsters={filterMonsters}>
