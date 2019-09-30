@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       monsters: [],
       searchField: '',
-      title: 'Monster Rolodex'
+      title: 'Monsters Rolodex'
     };
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     this.setState(
       {
         searchField: e.target.value,
-        title: e.target.value.length === 0 ? 'Monster Rolodex' : e.target.value
+        title: e.target.value.length === 0 ? 'Monsters Rolodex' : e.target.value
       }
     );
   }
